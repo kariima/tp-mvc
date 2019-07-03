@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 
-<?php require 'header.php' ?>
 
 <body>
     <h1>Liste des livres</h1>

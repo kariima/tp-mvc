@@ -5,12 +5,19 @@ $router = new Router();
 
 
 $router->get('', 'PagesController@home' );
-$router->get('ajout-emprunt', 'ExamplesController@index');
-$router->get('ajout-membre', 'ExamplesController@add');
 
-$router->post('', 'ExamplesController@save');
-$router->post('ajout-emprunt', 'ExamplesController@index');
-$router->post('ajout-membre', 'ExamplesController@add');
+$router->get('liste-bibliotheque', 'BibliothequesController@index');
+$router->get('ajout-bibliotheque', 'BibliothequesController@add');
+$router->post('ajout-bibliotheque', 'BibliothequesController@save');
+
+$router->get('liste-emprunt', 'EmpruntsController@index');
+$router->get('ajout-emprunt', 'EmpruntsController@add');
+$router->post('ajout-emprunt', 'EmpruntsController@save');
+
+$router->get('liste-membre', 'MembresController@index');
+$router->get('ajout-membre', 'MembresController@add');
+$router->post('ajout-membre', 'MembresController@save');
+
 
 
 // Run it!
