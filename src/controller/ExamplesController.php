@@ -8,12 +8,12 @@ class ExamplesController {
 
         $examples = Example::findAll();
 
-        view('examples.index');
+        view( 'ajout-emprunt.index');
     }
 
     public function add() {
 
-        view('examples.add');
+        view('ajout-membre.add');
     }
 
     public function save() {

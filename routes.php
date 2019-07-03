@@ -5,9 +5,13 @@ $router = new Router();
 
 
 $router->get('', 'PagesController@home' );
-$router->get('list-examples', 'ExamplesController@index');
-$router->get('add-example', 'ExamplesController@add');
-$router->post('add-example', 'ExamplesController@save');
+$router->get('ajout-emprunt', 'ExamplesController@index');
+$router->get('ajout-membre', 'ExamplesController@add');
+
+$router->post('', 'ExamplesController@save');
+$router->post('ajout-emprunt', 'ExamplesController@index');
+$router->post('ajout-membre', 'ExamplesController@add');
+
 
 // Run it!
 $router->run();
