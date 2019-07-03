@@ -3,6 +3,7 @@
 <?php require 'header.php' ?>
 
 <h1>Description livre : </h1>
+
 <body>
     Titre : <?= ($_GET['titre']) ?>
     Couverture : <?= ($_GET['couverture']) ?>;
