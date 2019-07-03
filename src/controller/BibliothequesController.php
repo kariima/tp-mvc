@@ -1,19 +1,19 @@
 <?php
 
 
-class ExamplesController {
+class BibliothequesController {
 
 
     public function index() {
 
         //$examples = Example::findAll();
 
-        view( 'ajout-emprunt.index');
+        view('bibliotheque.index');
     }
 
     public function add() {
 
-        view('ajout-membre.add');
+        view('bibliotheque.add');
     }
 
     public function save() {
