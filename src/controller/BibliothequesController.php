@@ -18,12 +18,17 @@ class BibliothequesController {
 
     public function save() {
 
-        $emprunt = new Example;
-        $emprunt->setField1($_POST['field1']);
-        $emprunt->setField2($_POST['field2']);
-        $emprunt->setField3($_POST['field3']);
-        $emprunt->setField4($_POST['date'], $_POST['time']);
-        $emprunt->setPhoto($_FILES['photo']);
+        $bibliotheque = new Bibliotheque;
+        $bibliotheque->setTitre($_POST['titre']);
+        $bibliotheque->setAuteur($_POST['auteur']);
+        $bibliotheque->setRésumé($_POST['résumé']);
+        $bibliotheque->setCatégorie($_POST['catégorie']);
+        $bibliotheque->setGenre($_POST['genre']);
+        $bibliotheque->setDelai($_POST['delai']);
+        $bibliotheque->setPrix($_POST['prix']);
+
+        $bibliotheque->setDateDeParution($_POST['date'], $_POST['time']);
+        $bibliotheque->setCouverture($_FILES['couverture']);
 
     }
 

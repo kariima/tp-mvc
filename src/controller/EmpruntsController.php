@@ -1,7 +1,7 @@
 <?php
 
 
-class ExamplesController {
+class EmpruntsController {
 
 
     public function index() {
@@ -17,9 +17,10 @@ class ExamplesController {
     public function save() {
 
         $emprunt = new Emprunt;
-        $emprunt->setTitle($_POST['titre']);
-        $emprunt->setauthor($_POST['auteur']);
-        $emprunt->setType($_POST['catégorie']);
+        $emprunt->setArticleId($_POST['article-id']);
+        $emprunt->setLecteurId($_POST['lecteur-id']);
+        $emprunt->setDateEmprunt($_POST['date_emprunt']);
+        $emprunt->setRenouvellement($_POST['renouvellement']);
 
         $emprunt->save();
 
