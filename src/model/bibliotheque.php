@@ -142,4 +142,13 @@ class Bibliotheque extends Db
         $data = Db::dbFind(self::TABLE_NAME);
         return $data;
     }
+
+    public static function findByGenre($genre)
+    {
+        $data = Db::dbFind(self::TABLE_NAME, [
+            ['genre', '=', $genre]
+        ]);
+
+        return $data;
+    }
 }

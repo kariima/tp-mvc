@@ -35,4 +35,14 @@ class BibliothequesController {
         BibliothequesController::index();
     }
 
+    public function livresByGenre($genre) {
+
+        $livres = Bibliotheque::findByGenre($genre);
+        
+        $livresJson = json_encode($livres);
+
+        Header('Content-type: application/json');
+        echo $livresJson;
+    }
+
 }
