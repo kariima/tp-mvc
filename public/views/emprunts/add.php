@@ -2,7 +2,7 @@
 
 <?php require 'header.php' ?>
 
-<h1>Ajouter un livre :</h1>
+<h1>Emprunter un livre</h1>
 
 <form class="form-rent" method="post">
     <h1 class="h2 mb-3 font-weight-normal">Add a book/h1>
