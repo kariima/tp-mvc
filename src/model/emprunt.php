@@ -30,7 +30,7 @@ class Emprunt extends Db {
         $dateFormat = DateTime::createFromFormat('d-m-Y', $DateEmprunt);
         if (!$dateFormat) {
                         throw new Exception('La date a un format incorrect.');
-                  }
+        }
         $this->DateEmprunt = $DateEmprunt;
         return $this;
     }
@@ -50,10 +50,6 @@ class Emprunt extends Db {
 
     public function getDateEmprunt() {
         return $this->DateEmprunt;
-    }
-
-    public function getField4() {
-        return $this->field4;
     }
 
 

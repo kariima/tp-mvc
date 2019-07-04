@@ -25,18 +25,38 @@ class Bibliotheque extends Db
 
     public function setTitre( $titre)
     {
+        if (strlen($titre) < 5) {
+            throw new Exception('Le titre est trop court.');
+        }
+
+        if (strlen($titre) > 255) {
+            throw new Exception('Le titre est trop long.');
+        }
+        
         $this->titre = $titre;
         return $this;
     }
 
     public function setAuteur($auteur)
     {
+        if (strlen($auteur) < 5) {
+            throw new Exception("Le nom de l'auteur est trop court.");
+        }
+
+        if (strlen($auteur) > 255) {
+            throw new Exception("Le nom de l'auteur est trop long.");
+        }
+
         $this->auteur = $auteur;
         return $this;
     }
 
     public function setRésumé( $résumé)
     {
+        if (strlen($résumé) < 5) {
+            throw new Exception ("Le contenu du résumé est trop court.");
+        }
+
         $this->résumé = $résumé;
         return $this;
     }
@@ -49,31 +69,40 @@ class Bibliotheque extends Db
 
     public function setGenre( $genre)
     {
+        if ($_POST['genre'] != $genre) {
+            throw new Exception ("Veuillez choisir un genre dans la liste déroulante.");
+        }
         $this->genre = $genre;
         return $this;
     }
 
     public function setDelai($delai)
     {
+        if (!is_numeric($delai)) {
+            throw new Exception ('Le délai doit être un nombre entier.');
+        }
         $this->delai = $delai;
         return $this;
     }
 
     public function setPrix($prix)
     {
+        if (!is_numeric($prix)) {
+            throw new Exception ('Le prix doit être un nombre entier.');
+        }
         $this->prix = $prix;
         return $this;
     }
 
-    public function setDateDeParution($date, $time)
+    public function setDateDeParution($dateDeParution, $time)
     {
-        $dateFormat = DateTime::createFromFormat('Y-m-d', $date);
+        $dateFormat = DateTime::createFromFormat('Y-m-d', $dateDeParution);
 
         if (!$dateFormat) {
             throw new Exception('La date a un format incorrect.');
         }
 
-        $this->dateDeParution = $date . ' ' . $time;
+        $this->dateDeParution = $dateDeParution . ' ' . $time;
         return $this;
     }
 
@@ -101,25 +130,44 @@ class Bibliotheque extends Db
         }
     }
 
-    public function getField1()
-    {
-        return $this->field1;
+    public function getId() {
+        return $this->id;
     }
-    public function getField2()
+    public function getTitre()
     {
-        return $this->field2;
+        return $this->titre;
     }
-    public function getField3()
+    public function getAuteur()
     {
-        return $this->field3;
+        return $this->auteur;
     }
-    public function getField4()
+    public function getRésumé()
     {
-        return $this->field4;
+        return $this->résumé;
     }
-    public function getPhoto()
+    public function getCatégorie()
     {
-        return $this->photo;
+        return $this->catégorie;
+    }
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+    public function getDelai()
+    {
+        return $this->delai;
+    }
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+    public function getDateDeParution()
+    {
+        return $this->dateDeParution;
+    }
+    public function getCouverture()
+    {
+        return $this->couverture;
     }
 
     public function save()
