@@ -3,7 +3,7 @@
 class Membre extends Db
 {
 
-    const TABLE_NAME = "compte-lecteur";
+    const TABLE_NAME = "compte_lecteur";
 
     protected $id;
     protected $nom;
@@ -65,7 +65,7 @@ class Membre extends Db
             throw new Exception('une erreur est survenue à l\'upload du fichier');
         }
     
-
+    }
     public function getId()
     {
         return $this->id;
@@ -102,6 +102,7 @@ class Membre extends Db
             "prenom"    => $this->getPrenom(),
             "email"    => $this->getEmail(),
             "photo"     => $this->getPhoto(),
+            "renouvellement" => $this->getRenouvellement()
         ];
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);

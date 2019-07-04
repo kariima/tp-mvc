@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `kindle`
 --
-
+CREATE DATABASE IF NOT EXISTS kindle;
 -- --------------------------------------------------------
 
 --
@@ -70,10 +70,10 @@ INSERT INTO `bibliotheque` (`id`, `titre`, `auteur`, `résumé`, `couverture`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `compte-lecteur`
+-- Structure de la table `compte_lecteur`
 --
 
-CREATE TABLE `compte-lecteur` (
+CREATE TABLE `compte_lecteur` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
