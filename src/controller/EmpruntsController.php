@@ -11,7 +11,7 @@ class EmpruntsController {
 
     public function add() {
 
-        view('emprunts.add');
+        view('emprunts.ajout-emprunt');
     }
 
     public function save() {

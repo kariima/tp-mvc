@@ -14,7 +14,7 @@ class BibliothequesController {
 
     public function add() {
 
-        view('bibliotheque.add');
+        view('bibliotheque.ajout-bibliotheque');
     }
 
     public function save() {
