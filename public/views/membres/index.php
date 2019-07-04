@@ -15,7 +15,7 @@
             <td> <?= ($_GET['photo']) ?></td>
             <td> <?= ($_GET['nom']) ?>;</td>
             <td> <?= ($_GET['prenom']) ?>;</td>
-            <td> <?= ($_GET['email']) ?>;</td>
+            <td> <?= ($_GET['mail']) ?>;</td>
         </tr>
     </table>
 
