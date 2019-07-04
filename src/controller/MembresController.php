@@ -6,7 +6,7 @@ class MembresController
     public function index()
     {
 
-       // $membre = Membre::findAll();
+        $membres = Membre::findAll();
         view('membres.index', compact('membres'));
     }
 
@@ -36,7 +36,7 @@ class MembresController
     public function show($id)
     {
 
-        $membre = Membre::findOne($id);
+        $membres = Membre::findOne($id);
         view('membres.show', compact('membres'));
     }
 }

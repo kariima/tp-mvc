@@ -4,19 +4,25 @@
 <body>
     <h1>Liste des membres :</h1>
     <table>
-        <tr>
-            <th>Photo :</th>
-            <th>Nom</th>
-            <th>Prénom :</th>
-            <th>Email :</th>
+        <tr class="m-4">
+            <th class="card-header">Photo </th>
+            <th class="card-header">Nom </th>
+            <th class="card-header">Prénom </th>
+            <th class="card-header">Email </th>
+            <th class="card-header">Renouveler ? </th>
         </tr>
 
-        <tr>
-            <td> <?= ($_GET['photo']) ?></td>
-            <td> <?= ($_GET['nom']) ?>;</td>
-            <td> <?= ($_GET['prenom']) ?>;</td>
-            <td> <?= ($_GET['mail']) ?>;</td>
-        </tr>
+
+
+        <?php foreach ($membres as $m) : ?>
+            <tr class="card-body">
+                <td class="card-text m-2"><?= $m['photo'] ?></td>
+                <td class="card-text m-2"><?= $m['nom'] ?></td>
+                <td class="card-text m-2"><?= $m['prenom'] ?></td>
+            </tr>
+            <input type="checkbox" ><?= $m['renouvellement'] ?></td>
+            
+        <?php endforeach; ?>
     </table>
 
 
