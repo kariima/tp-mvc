@@ -32,9 +32,9 @@ CREATE TABLE `bibliotheque` (
   `id` int(11) NOT NULL,
   `titre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `auteur` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `résumé` text COLLATE utf8_unicode_ci,
+  `resume` text COLLATE utf8_unicode_ci,
   `couverture` text COLLATE utf8_unicode_ci,
-  `catégorie` text COLLATE utf8_unicode_ci NOT NULL,
+  `categorie` text COLLATE utf8_unicode_ci NOT NULL,
   `genre` text COLLATE utf8_unicode_ci NOT NULL,
   `delai` int(11) NOT NULL,
   `prix` int(11) NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE `bibliotheque` (
 -- Déchargement des données de la table `bibliotheque`
 --
 
-INSERT INTO `bibliotheque` (`id`, `titre`, `auteur`, `résumé`, `couverture`, `catégorie`, `genre`, `delai`, `prix`, `date_de_parution`) VALUES
+INSERT INTO `bibliotheque` (`id`, `titre`, `auteur`, `resume`, `couverture`, `categorie`, `genre`, `delai`, `prix`, `date_de_parution`) VALUES
 (1, 'La princesse des glaces', 'Camilla Lackberg', 'Erica Falck, trente-cinq ans, auteure de biographies installée dans une petite ville paisible de la côte ouest suédoise, découvre le cadavre aux poignets tailladés d\'une amie d\'enfance, Alexandra Wijkner, nue dans une baignoire d\'eau gelée.\r\nImpliquée malgré elle dans l\'enquête (à moins qu\'une certaine tendance naturelle à fouiller la vie des autres ne soit ici à l\'œuvre), Erica se convainc très vite qu\'il ne s\'agit pas d\'un suicide. Sur ce point - et sur beau... ', NULL, 'Livre', 'Policier', 4, 3, '2008-04-30 00:00:00'),
 (2, 'L\'enfant Allemand', 'Camilla Lackberg', 'La jeune Erica Falck a déjà une longue expérience du crime. Quant à Patrik Hedström, l\'inspecteur qu\'elle vient d\'épouser, il a échappé de peu à la mort, et tous deux savent que le mal peut surgir n\'importe où, qu\'il se tapit peut-être en chacun de nous, et que la duplicité humaine, loin de représenter l\'exception, constitue sans doute la règle. Tandis qu\'elle entreprend des recherches sur cette mère qu\'elle regrette de ne pas avoir mieux connue et dont elle n\'a jamais vraiment compris la froideur, Erica découvre, en fouillant son grenier, les carnets d\'un journal intime et, enveloppée dans une petite brassière maculée de sang, une ancienne médaille ornée d\'une croix gammée. \r\nPourquoi sa mère, qui avait laissé si peu de choses, avait-elle conservé un tel objet ? Voulant en savoir plus, elle entre en contact avec un vieux professeur d\'histoire à la retraite. L\'homme a un comportement bizarre et se montre élusif. Deux jours plus tard, il est sauvagement assassiné... Dans ce cinquième volet des aventures d\'Erica Falck, Camilla Läckberg mêle avec virtuosité l\'histoire de son héroïne et celle d\'une jeune Suédoise prise dans la tourmente de la Seconde Guerre mondiale. \r\nTandis qu\'Erica fouille le passé de sa famille, le lecteur plonge avec délice dans un nouveau bain de noirceur nordique.', NULL, 'Livre', 'Policier', 4, 3, '2011-01-05 00:00:00'),
 (3, 'Millenium Tome 1 : Les hommes qui n\'aimaient pas les femmes', 'Stieg Larsson', 'Après avoir perdu un procès en diffamation, Mikael Blomkvist, brillant journaliste d\'investigation, démissionne de la revue Millénium et ressasse son dépit. Il est contacté par un magnat de l\'industrie qui lui confie une enquête vieille de quarante ans : sur l\'île abritant l\'imposante propriété familiale, sa nièce, Harriet Vanger, a naguère disparu, et il reste persuadé qu\'elle a été assassinée. Si ce n\'est pas exactement le hasard qui réunit Mikael Blomkvist et Lisbeth Salander, réchappée des services sociaux et génie de l\'informatique, c\'est une vraie chance, car la jeune femme va bien vite s\'imposer comme le meilleur atout du journaliste pour élucider l\'affaire. \r\nL\'intolérance, l\'hypocrisie, la violence et le cynisme de notre monde contemporain - aux niveaux politique, économique, social, familial - sont les ressorts de ce polar addictif, au suspense insoutenable, qui a enthousiasmé des millions de lecteurs.', NULL, 'Livre', 'Thriller', 4, 3, '2011-01-30 00:00:00'),

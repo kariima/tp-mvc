@@ -27,8 +27,8 @@ class Db {
      * Exemple :
      * $table = "Category";
      * $data = [
-     *      'title'         => "Nouvelle catégorie",
-     *      'description'   => 'Ma nouvelle catégorie.',
+     *      'title'         => "Nouvelle categorie",
+     *      'description'   => 'Ma nouvelle categorie.',
      * ];
      */
     protected static function dbCreate(string $table, array $data) {
@@ -42,7 +42,10 @@ class Db {
 
         $response = $bdd->prepare($req);
 
+        dump($req);
+        dump($data);
         $response->execute($data);
+        dump($bdd->errorInfo());
 
         return $bdd->lastInsertId();
     }
@@ -145,8 +148,8 @@ class Db {
      * $table = "Category";
      * $data = [
      *      'id'            => 4,
-     *      'title'         => "Nouveau titre de catégorie",
-     *      'description'   => 'Ma nouvelle catégorie.',
+     *      'title'         => "Nouveau titre de categorie",
+     *      'description'   => 'Ma nouvelle categorie.',
      * ];
      */
     protected static function dbUpdate(string $table, array $data, string $idField = null) {

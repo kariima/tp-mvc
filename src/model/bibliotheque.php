@@ -8,8 +8,8 @@ class Bibliotheque extends Db
     protected $id;
     protected $titre;
     protected $auteur;
-    protected $résumé;
-    protected $catégorie;
+    protected $resume;
+    protected $categorie;
     protected $genre;
     protected $delai;
     protected $prix;
@@ -51,19 +51,19 @@ class Bibliotheque extends Db
         return $this;
     }
 
-    public function setRésumé( $résumé)
+    public function setRésumé( $resume)
     {
-        if (strlen($résumé) < 5) {
-            throw new Exception ("Le contenu du résumé est trop court.");
+        if (strlen($resume) < 5) {
+            throw new Exception ("Le contenu du resume est trop court.");
         }
 
-        $this->résumé = $résumé;
+        $this->resume = $resume;
         return $this;
     }
 
-    public function setCatégorie($catégorie)
+    public function setCatégorie($categorie)
     {
-        $this->catégorie = $catégorie;
+        $this->categorie = $categorie;
         return $this;
     }
 
@@ -94,7 +94,7 @@ class Bibliotheque extends Db
         return $this;
     }
 
-    public function setDateDeParution($dateDeParution, $time)
+    public function setDateDeParution($dateDeParution)
     {
         $dateFormat = DateTime::createFromFormat('Y-m-d', $dateDeParution);
 
@@ -102,13 +102,15 @@ class Bibliotheque extends Db
             throw new Exception('La date a un format incorrect.');
         }
 
-        $this->dateDeParution = $dateDeParution . ' ' . $time;
+        $this->dateDeParution = $dateDeParution ;
         return $this;
     }
 
     public function setCouverture($couverture)
     {
-        if (isset( $couverture) and $couverture['error'] == 0) {
+        if ( !empty($couverture['name']) ) {
+
+            if ($couverture['error'] == 0) {
             // Testons si le fichier n'est pas trop gros
             if ( $couverture['size'] <= 10000000) {
                 // Testons si l'extension est autorisée
@@ -128,26 +130,32 @@ class Bibliotheque extends Db
         } else {
             throw new Exception('une erreur est survenue à l\'upload du fichier');
         }
+
+        }
+
+        $this->couverture = 'aa';
+        
     }
 
     public function getId() {
         return $this->id;
     }
-    public function getTitre()
-    {
-        return $this->titre;
+    public function getTitre() {
+        $titleUppercase = ucfirst($this->titre);
+        return $titleUppercase;
     }
+    
     public function getAuteur()
     {
         return $this->auteur;
     }
     public function getRésumé()
     {
-        return $this->résumé;
+        return $this->resume;
     }
     public function getCatégorie()
     {
-        return $this->catégorie;
+        return $this->categorie;
     }
     public function getGenre()
     {
@@ -172,15 +180,22 @@ class Bibliotheque extends Db
 
     public function save()
     {
+
         $data = [
-            "field1"    => $this->getField1(),
-            "field2"    => $this->getField2(),
-            "field3"    => $this->getField3(),
-            "field4"    => $this->getField4(),
-            "photo"     => $this->getPhoto(),
+            "titre"             => $this->getTitre(),
+            "auteur"            => $this->getAuteur(),
+            "resume"            => $this->getRésumé(),
+            "categorie"         => $this->getCatégorie(),
+            "genre"             => $this->getGenre(),
+            "delai"             => $this->getDelai(),
+            "prix"              => $this->getPrix(),
+            "date_de_parution"  => $this->getDateDeParution(),
+            "couverture"        => $this->getCouverture(),
         ];
+
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
+        dump($nouvelId);
         $this->setId($nouvelId);
         return $this;
     }
