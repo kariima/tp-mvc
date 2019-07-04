@@ -35,34 +35,8 @@
                                             <strong>Abby</strong> joined ACME Project Team in <strong>`Collaboration`</strong>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <strong>Gary</strong> deleted My Board1 in <strong>`Discussions`</strong>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <strong>Kensington</strong> deleted MyBoard3 in <strong>`Discussions`</strong>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <strong>John</strong> deleted My Board1 in <strong>`Discussions`</strong>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <strong>Skell</strong> deleted his post Look at Why this is.. in <strong>`Discussions`</strong>
-                                        </td>
-                                    </tr>
+                        
                                 </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!--/row-->
-                </div>
             
                 <div class="tab-pane" id="edit">
                     <h4 class="m-y-2">Edit Profile</h4>
@@ -83,12 +57,6 @@
                             <label class="col-lg-3 col-form-label form-control-label">Email</label>
                             <div class="col-lg-9">
                                 <input class="form-control" type="email" value="email@gmail.com">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Company</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="text" value="">
                             </div>
                         </div>
                 
