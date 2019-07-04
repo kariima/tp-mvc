@@ -19,7 +19,7 @@ class ExamplesController {
         $emprunt = new Emprunt;
         $emprunt->setTitle($_POST['titre']);
         $emprunt->setauthor($_POST['auteur']);
-        $emprunt->setType($_POST['Type']);
+        $emprunt->setType($_POST['catégorie']);
 
         $emprunt->save();
 
