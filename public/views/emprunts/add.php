@@ -5,11 +5,11 @@
 <h1>Emprunter un livre</h1>
 
 <form class="form-rent" method="post">
-    <h1 class="h2 mb-3 font-weight-normal">Add a book/h1>
-        <input type="text" name="title" placeholder="Enter a title">
-        <input type="text" name="author" placeholder="Enter an author">
+    <h1 class="h2 mb-3 font-weight-normal">Ajouter un livre/h1>
+        <input type="text" name="titre" placeholder="Taper un titre">
+        <input type="text" name="auteur" placeholder="Taper un auteur">
         <select class="custom-select custom-select-sm">
-            <option selected>Choose a genre</option>
+            <option selected>Choisir un genre</option>
             <option value="1">Thriller</option>
             <option value="2">Policier</option>
             <option value="3">Fantastique</option>

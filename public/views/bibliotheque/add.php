@@ -8,21 +8,21 @@
 
     <div class="form-group">
         <label for="">Titre</label>
-        <input name="title" type="text" class="form-control">
+        <input name="titre" type="text" class="form-control">
     </div>
 
     
     <div class="form-group">
         <label for="">Auteur</label>
-        <input name="creator" type="text" class="form-control">
+        <input name="auteur" type="text" class="form-control">
     </div>
 
     <div class="form-group">
     <label for="">Genres</label>
-        <select name="type_id" id="" class="form-control">
+        <select name="genre" id="" class="form-control">
         <option selected disabled >Choisir un genre... </option>
             <?php foreach ($Genres as $Genre) : ?>
-                <option value="<?= $Genre['id']?>"><?= $Genre['name']?></option>
+                <option value="<?= $Genre['id']?>"><?= $Genre['genre']?></option>
             <?php endforeach; ?>
         </select>
     </div>
