@@ -27,7 +27,6 @@ class BibliothequesController {
         $bibliotheque->setGenre($_POST['genre']);
         $bibliotheque->setDelai($_POST['delai']);
         $bibliotheque->setPrix($_POST['prix']);
-
         $bibliotheque->setDateDeParution($_POST['date'], $_POST['time']);
         $bibliotheque->setCouverture($_FILES['couverture']);
 
