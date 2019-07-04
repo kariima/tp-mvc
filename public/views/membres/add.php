@@ -20,7 +20,14 @@
 </form>
 
 
-
+<div class="col-lg-4 pull-lg-8 text-xs-center">
+    <img src="//placehold.it/150" class="m-x-auto img-fluid img-circle" alt="avatar">
+    <h6 class="m-t-2">Ajouter une photo</h6>
+    <label class="custom-file">
+        <input type="file" id="file" class="custom-file-input">
+        <span class="custom-file-control">Choisir un fichier</span>
+    </label>
+</div>
 
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
