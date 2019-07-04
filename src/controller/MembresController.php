@@ -1,20 +1,27 @@
 <?php
 
-class UtilisateursController
+class MembresController
 {
 
     public function index()
     {
 
-        $utilisateurs = Utilisateur::findAll();
-        view('utilisateurs.index', compact('utilisateurs'));
+        $membre = Membre::findAll();
+        view('liste-membre.index', compact('liste-membre'));
     }
+
+    public function add()
+    {
+
+        view('liste-membre.add');
+    }
+
 
     public function show($id)
     {
 
-        $utilisateur = Utilisateur::findOne($id);
-        view('utilisateurs.show', compact('utilisateur'));
+        $membre = Membre::findOne($id);
+        view('liste-membre.show', compact('liste-membre'));
     }
 }
 
