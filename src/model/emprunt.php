@@ -1,8 +1,8 @@
 <?php
 
-class Example extends Db {
+class Emprunt extends Db {
 
-    const TABLE_NAME = "KINDLE";
+    const TABLE_NAME = "emprunts";
 
     protected $id;
     protected $ArticleId;
@@ -63,7 +63,7 @@ class Example extends Db {
             "Id"    => $this->getId(),
             "ArticleId"    => $this->getArticleId(),
             "LecteurId"    => $this->getLecteurId(),
-            "DateEmprunt"    => $this->getDateEmprunt(),
+            "DateEmprunt"  => $this->getDateEmprunt(),
         ];
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::KINDLE, $data);

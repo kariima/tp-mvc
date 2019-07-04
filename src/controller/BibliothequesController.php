@@ -6,7 +6,7 @@ class BibliothequesController {
 
     public function index() {
 
-        //$bibliotheque = Bibliotheque::findAll();
+        $bibliotheque = Bibliotheque::findAll();
         $bibliotheque = '';
 
         view('bibliotheque.index', compact('bibliotheque'));
