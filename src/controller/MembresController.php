@@ -22,12 +22,12 @@ class MembresController
         $membre = new Emprunt;
         $membre->setNom($_POST['a']);
         $membre->setPrenom($_POST['lecteur-id']);
-        $membre->setMail($_POST['date_emprunt']);
-        $membre->setAdresse($_POST['date_emprunt']);
-        $membre->setCP($_POST['date_emprunt']);
-        $membre->setVille($_POST['date_emprunt']);
-        $membre->setCarteBancaire($_POST['date_emprunt']);
-        $membre->setPhoto($_POST['date_emprunt']);
+        $membre->setMail($_POST['mail']);
+        $membre->setAdresse($_POST['adresse']);
+        $membre->setCP($_POST['cp']);
+        $membre->setVille($_POST['ville']);
+        $membre->setCarteBancaire($_POST['carte bancaire']);
+        $membre->setPhoto($_POST['photo']);
         $membre->setRenouvellement($_POST['renouvellement']);
 
         $membre->save();
