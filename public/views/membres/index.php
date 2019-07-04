@@ -20,7 +20,6 @@
                 <td class="card-text m-2"><?= $m['nom'] ?></td>
                 <td class="card-text m-2"><?= $m['prenom'] ?></td>
                 <td class="card-text m-2"><?= $m['mail'] ?></td>
-                <td class="card-text m-2"><input type="checkbox"><?= $m['renouvellement'] ?></td>
             </tr>
 
 
