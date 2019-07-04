@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<a href="" class="btn btn-danger btn-sm mb-2">Retour</a>
+<a href="<?php url('bibliotheque/index')?>" class="btn btn-danger btn-sm mb-2">Retour</a>
 
 <form action="add" method="POST" class="form">
 
