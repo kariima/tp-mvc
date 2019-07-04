@@ -14,6 +14,12 @@ class EmpruntsController {
         view('emprunts.ajout-emprunt');
     }
 
+    public function index()
+    {
+
+        view('emprunts.index');
+    }
+
     public function save() {
 
         $emprunt = new Emprunt;
