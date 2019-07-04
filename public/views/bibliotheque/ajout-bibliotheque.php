@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<a href="<?php url('bibliotheque/index')?>" class="btn btn-danger btn-sm mb-2">Retour</a>
+<a href="<?php url('bibliotheque/index') ?>" class="btn btn-danger btn-sm mb-2">Retour</a>
 
 <form action="add" method="POST" class="form">
 
@@ -11,25 +11,30 @@
         <input name="titre" type="text" class="form-control">
     </div>
 
-    
+
     <div class="form-group">
         <label for="">Auteur</label>
         <input name="auteur" type="text" class="form-control">
     </div>
 
     <div class="form-group">
-    <label for="">Genres</label>
+        <label for="">Genres</label>
         <select name="genre" id="" class="form-control">
-        <option selected disabled >Choisir un genre... </option>
-            <?php foreach ($Genres as $Genre) : ?>
-                <option value="<?= $Genre['id']?>"><?= $Genre['genre']?></option>
-            <?php endforeach; ?>
+            <option selected enabled>Choisir un genre... </option>
+           
+                <option value="1">Thriller</option>
+                <option value="2">Policier</option>
+                <option value="3">Fantastique</option>
+                <option value="4">Horreur</option>
+                <option value="5">Comédie</option>
+                <option value="6">Science</option>
+                <option value="7">Onirique</option>
         </select>
     </div>
 
     <button class="btn btn-danger float-right">Ajouter un livre</button>
 
-    
+
 
 </form>
 
