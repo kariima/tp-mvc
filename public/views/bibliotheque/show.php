@@ -9,8 +9,9 @@
     Couverture : <?= ($_GET['couverture']) ?>;
     Résumé : <?= ($_GET['résumé']) ?>;
     Catégorie : <?= ($_GET['catégorie']) ?>;
+    Date de parution : <?= ($_GET['date_de_parution']) ?>;
     Prix : <?= ($_GET['prix']) ?>;
-    Délai de retour : <?= ($_GET['délai']) ?>;
+    Délai de retour : <?= ($_GET['delai']) ?>;
 
 
 </body>
