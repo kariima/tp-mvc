@@ -22,7 +22,7 @@
         <select name="type_id" id="" class="form-control">
         <option selected disabled >Choisir un genre... </option>
             <?php foreach ($Genres as $Genre) : ?>
-                <option value="<?= $Genre['id']?>"><?= $Genre['name']?></option>
+                <option value="<?= $Genre['id']?>"><?= $Genre['titre']?></option>
             <?php endforeach; ?>
         </select>
     </div>

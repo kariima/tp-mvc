@@ -16,7 +16,7 @@ $router->post('ajout-emprunt', 'EmpruntsController@save');
 
 $router->get('liste-membre', 'MembresController@index');
 $router->get('ajout-membre', 'MembresController@add');
-$router->get('ajout-membre'{$id}, 'MembresController@show');
+$router->get('ajout-membre', 'MembresController@show');
 $router->post('ajout-membre', 'MembresController@save');
 
 

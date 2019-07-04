@@ -17,14 +17,14 @@ class MembresController
     }
 
 
-    public function show($id)
+    /* public function show($id)
     {
 
         $membre = Membre::findOne($id);
         view('liste-membre.show', compact('liste-membre'));
     }
 }
-
+*/
 /* <?php
 
 
@@ -55,5 +55,5 @@ class ExamplesController {
         // $flight->save();
 
     }
-
-} */
+*/
+} 
