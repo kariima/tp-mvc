@@ -35,6 +35,12 @@ class Membre extends Db
         return $this;
     }
 
+    public function setRenouvellement($renouvellement)
+    {
+        $this->renouvellement = $renouvellement;
+        return $this;
+    }
+
     public function setPhoto($photo)
     {
         if (isset($photo) and $photo['error'] == 0) {
@@ -78,6 +84,11 @@ class Membre extends Db
     public function getPhoto()
     {
         return $this->photo;
+    }
+
+    public function getRenouvellement()
+    {
+        return $this->renouvellement;
     }
 
     public function save()

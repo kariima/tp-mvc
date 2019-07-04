@@ -14,6 +14,8 @@
                 </li>
             </ul>
 
+            <input type="checkbox" class="form-check-input" id="renouvellement">
+            <label class="form-check-label" for="renouvellement">Cocher pour renouveller</label>
             <div class="tab-pane" id="edit">
                 <h4 class="m-y-2">Modifier informations</h4>
                 <form role="form">
@@ -81,7 +83,7 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Confirmer mot de passe</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="password" value="11111122333">
+                            <input class="form-control" type="password" value="">
                         </div>
                     </div>
                     <div class="form-group row">
