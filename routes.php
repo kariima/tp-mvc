@@ -12,6 +12,7 @@ $router->post('ajout-bibliotheque', 'BibliothequesController@save');
 
 $router->get('ajout-emprunt', 'EmpruntsController@add');
 $router->post('ajout-emprunt', 'EmpruntsController@save');
+$router->get('liste-emprunt', 'EmpruntsController@index');
 
 $router->get('liste-membre', 'MembresController@index');
 $router->get('ajout-membre', 'MembresController@add');
