@@ -16,6 +16,22 @@ class MembresController
         view('membres.add');
     }
 
+    public function save()
+    {
+        
+        $membre = new Emprunt;
+        $membre->setNom($_POST['a']);
+        $membre->setPrenom($_POST['lecteur-id']);
+        $membre->setMail($_POST['date_emprunt']);
+        $membre->setAdresse($_POST['date_emprunt']);
+        $membre->setCP($_POST['date_emprunt']);
+        $membre->setVille($_POST['date_emprunt']);
+        $membre->setCarteBancaire($_POST['date_emprunt']);
+        $membre->setPhoto($_POST['date_emprunt']);
+        $membre->setRenouvellement($_POST['renouvellement']);
+
+        $membre->save();
+    }
 
     public function show($id)
     {
