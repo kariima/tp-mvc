@@ -1,11 +1,10 @@
 <?php ob_start(); ?>
 
-<?php require 'header.php' ?>
 
 <h1>Emprunter un livre</h1>
 
 <form class="form-rent" method="post">
-    <h1 class="h2 mb-3 font-weight-normal">Ajouter un livre/h1>
+    <h1 class="h2 mb-3 font-weight-normal">Ajouter un livre</h1>
         <input type="text" name="titre" placeholder="Taper un titre">
         <input type="text" name="auteur" placeholder="Taper un auteur">
         <select class="custom-select custom-select-sm">

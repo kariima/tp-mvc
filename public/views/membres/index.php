@@ -2,7 +2,7 @@
 
 
 <body>
-    <h1>Liste des uilisateurs</h1>
+    <h1>Liste des membres :</h1>
     <table>
         <tr>
             <th>Photo :</th>

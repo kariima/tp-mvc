@@ -6,25 +6,25 @@ class MembresController
     public function index()
     {
 
-        $membre = Membre::findAll();
-        view('liste-membre.index', compact('liste-membre'));
+       // $membre = Membre::findAll();
+        view('membres.index', compact('membres'));
     }
 
     public function add()
     {
 
-        view('liste-membre.add');
+        view('membres.add');
     }
 
 
-    /* public function show($id)
+    public function show($id)
     {
 
         $membre = Membre::findOne($id);
-        view('liste-membre.show', compact('liste-membre'));
+        view('membres.show', compact('membres'));
     }
 }
-*/
+
 /* <?php
 
 
@@ -56,4 +56,4 @@ class ExamplesController {
 
     }
 */
-} 
+ 

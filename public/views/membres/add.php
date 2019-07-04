@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 
-<?php require 'header.php' ?>
 
 <h1>Ajouter un membre : </h1>
 

@@ -6,14 +6,15 @@ class BibliothequesController {
 
     public function index() {
 
-        //$examples = Example::findAll();
+        //$bibliotheque = Bibliotheque::findAll();
+        $bibliotheque = '';
 
-        view('liste-bibliotheque.index');
+        view('bibliotheque.index', compact('bibliotheque'));
     }
 
     public function add() {
 
-        view('ajout-bibliotheque.add');
+        view('bibliotheque.add');
     }
 
     public function save() {
@@ -30,6 +31,9 @@ class BibliothequesController {
         $bibliotheque->setDateDeParution($_POST['date'], $_POST['time']);
         $bibliotheque->setCouverture($_FILES['couverture']);
 
+        $bibliotheque->save();
+
+        BibliothequesController::index();
     }
 
 }

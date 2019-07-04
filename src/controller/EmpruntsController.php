@@ -4,14 +4,14 @@
 class EmpruntsController {
 
 
-    public function index() {
+    /*public function index() {
 
-        view('liste-emprunt.index');
-    }
+        view('emprunts.index');
+    } */
 
     public function add() {
 
-        view('ajout-emprunt.add');
+        view('emprunts.add');
     }
 
     public function save() {
