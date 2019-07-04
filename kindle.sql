@@ -93,8 +93,8 @@ CREATE TABLE `compte_lecteur` (
 
 CREATE TABLE `emprunts` (
   `id` int(11) NOT NULL,
-  `article-id` int(11) NOT NULL,
-  `lecteur-id` int(11) NOT NULL,
+  `article_id` int(11) NOT NULL,
+  `lecteur_id` int(11) NOT NULL,
   `date_emprunt` date NOT NULL,
   `renouvellement` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -109,8 +109,8 @@ CREATE TABLE `evaluation` (
   `id` int(11) NOT NULL,
   `note` int(11) NOT NULL,
   `commentaire` text COLLATE utf8_unicode_ci,
-  `lecteur-id` int(11) NOT NULL,
-  `article-id` int(11) NOT NULL
+  `lecteur_id` int(11) NOT NULL,
+  `article_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --

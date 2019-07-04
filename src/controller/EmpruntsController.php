@@ -11,23 +11,26 @@ class EmpruntsController {
 
     public function add() {
 
-        view('emprunts.ajout-emprunt');
+        $membres = Membre::findAll();
+        view('emprunts.ajout-emprunt', compact('membres'));
     }
 
     public function index()
     {
-
-        view('emprunts.index');
+        $emprunts = Emprunt::findAll();
+        view('emprunts.index', compact('emprunts'));
     }
 
-    public function save() {
+    public function save($idUser, $idLivre) {
 
         $emprunt = new Emprunt;
-        $emprunt->setArticleId($_POST['article-id']);
-        $emprunt->setLecteurId($_POST['lecteur-id']);
-        $emprunt->setDateEmprunt($_POST['date_emprunt']);
+        $emprunt->setLecteurId($idUser);
+        $emprunt->setArticleId($idLivre);
+        $emprunt->setDateEmprunt( date('Y-m-d') );
 
         $emprunt->save();
+
+        redirectTo('liste-emprunt');
 
     }
 

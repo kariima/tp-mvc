@@ -28,6 +28,13 @@
     
     $(function() {
 
+      $('#selectUserFromEmprunt').on('change', function() {
+
+        if ( $(this).val() != '' ) {
+          $('#selectGenreFromEmprunt').show();
+        }
+      });
+
       $('#selectGenreFromEmprunt').on('change', function() {
         console.log ( $(this).val() )
 
@@ -42,10 +49,12 @@
               
                 res.forEach(function(livre) {
 
+                  let idUser = $('#selectUserFromEmprunt').val();
+
                   console.log(livre)
                     let htmlContent = '<div class="card my-2">'+
                                           '<div class="card-body">'+ livre.titre +
-                                              '<a class="btn btn-success btn-sm float-right" href="http://localhost:8888/tp-mvc/ajout-emprunt/1/'+livre.id+'">Emprunter ce livre</a>'+
+                                              '<a class="btn btn-success btn-sm float-right" href="http://localhost:8888/tp-mvc/ajout-emprunt/'+idUser+'/'+livre.id+'">Emprunter ce livre</a>'+
                                           '</div>'+
                                       '</div>';
 

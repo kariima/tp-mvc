@@ -19,25 +19,25 @@ class MembresController
     public function save()
     {
         
-        $membre = new Emprunt;
-        $membre->setNom($_POST['a']);
-        $membre->setPrenom($_POST['lecteur-id']);
+        $membre = new Membre;
+        $membre->setId($_POST['id']);
+        $membre->setNom($_POST['nom']);
+        $membre->setPrenom($_POST['prenom']);
         $membre->setMail($_POST['mail']);
         $membre->setAdresse($_POST['adresse']);
         $membre->setCP($_POST['cp']);
         $membre->setVille($_POST['ville']);
         $membre->setCarteBancaire($_POST['carte bancaire']);
-        $membre->setPhoto($_POST['photo']);
-        $membre->setRenouvellement($_POST['renouvellement']);
+        $membre->setPhoto($_FILES['photo']);
 
         $membre->save();
     }
 
-    public function show($id)
+    public function show($membre)
     {
 
-        $membres = Membre::findOne($id);
-        view('membres.show', compact('membres'));
+        $membre = Membre::findOne($membre);
+        view('membres.show', compact('membre'));
     }
 }
 

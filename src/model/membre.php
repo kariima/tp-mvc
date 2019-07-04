@@ -115,4 +115,16 @@ class Membre extends Db
         $data = Db::dbFind(self::TABLE_NAME);
         return $data;
     }
+
+    public static function findOne(int $id) {
+        $request = [
+            ['id', '=', $id]
+        ];
+        $element = Db::dbFind(self::TABLE_NAME, $request);
+        if (count($element) > 0) $element = $element[0];
+        else return;
+
+        return $element;
+
+    }
 }

@@ -12,13 +12,13 @@ $router->post('ajout-bibliotheque', 'BibliothequesController@save');
 
 $router->get('bibliotheque/genre/{genre}', 'BibliothequesController@livresByGenre');
 
+$router->get('ajout-emprunt/{idUser}/{idLivre}', 'EmpruntsController@save');
 $router->get('ajout-emprunt', 'EmpruntsController@add');
-$router->post('ajout-emprunt', 'EmpruntsController@save');
 $router->get('liste-emprunt', 'EmpruntsController@index');
 
 $router->get('liste-membre', 'MembresController@index');
 $router->get('ajout-membre', 'MembresController@add');
-$router->get( 'ajout-membre/{id}', 'MembresController@show');
+$router->get('profil-membre/{id}', 'MembresController@show');
 $router->post('ajout-membre', 'MembresController@save');
 
 

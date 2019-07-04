@@ -19,7 +19,7 @@
                 <td class="card-text m-2"><?= $m['photo'] ?></td>
                 <td class="card-text m-2"><?= $m['nom'] ?></td>
                 <td class="card-text m-2"><?= $m['prenom'] ?></td>
-                <td class="card-text m-2"><?= $m['mail'] ?></td>
+                <td class="card-text m-2"><a href="<?= url('profil-membre/' . $m['id'] ) ?>"><?= $m['mail'] ?></a></td>
             </tr>
 
 

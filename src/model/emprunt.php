@@ -27,7 +27,7 @@ class Emprunt extends Db {
     }
 
     public function setDateEmprunt($DateEmprunt) {
-        $dateFormat = DateTime::createFromFormat('d-m-Y', $DateEmprunt);
+        $dateFormat = DateTime::createFromFormat('Y-m-d', $DateEmprunt);
         if (!$dateFormat) {
                         throw new Exception('La date a un format incorrect.');
         }
@@ -56,19 +56,19 @@ class Emprunt extends Db {
     public function save()
     {
         $data = [
-            "Id"    => $this->getId(),
-            "ArticleId"    => $this->getArticleId(),
-            "LecteurId"    => $this->getLecteurId(),
-            "DateEmprunt"  => $this->getDateEmprunt(),
+            "id"    => $this->getId(),
+            "article_id"    => $this->getArticleId(),
+            "lecteur_id"    => $this->getLecteurId(),
+            "date_emprunt"  => $this->getDateEmprunt(),
         ];
         //if ($this->id > 0) return $this->update();
-        $nouvelId = Db::dbCreate(self::KINDLE, $data);
+        $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
         $this->setId($nouvelId);
         return $this;
     }
 
     public static function findAll() {
-        $data = Db::dbFind(self::KINDLE);
+        $data = Db::dbFind(self::TABLE_NAME);
         return $data;
     }
 }
