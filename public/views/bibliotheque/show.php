@@ -7,8 +7,8 @@
 <body>
     Titre : <?= ($_GET['titre']) ?>
     Couverture : <?= ($_GET['couverture']) ?>;
-    Résumé : <?= ($_GET['résumé']) ?>;
-    Catégorie : <?= ($_GET['catégorie']) ?>;
+    Résumé : <?= ($_GET['resume']) ?>;
+    Catégorie : <?= ($_GET['categorie']) ?>;
     Date de parution : <?= ($_GET['date_de_parution']) ?>;
     Prix : <?= ($_GET['prix']) ?>;
     Délai de retour : <?= ($_GET['delai']) ?>;

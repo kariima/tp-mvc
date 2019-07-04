@@ -18,21 +18,20 @@ class BibliothequesController {
     }
 
     public function save() {
-
         $bibliotheque = new Bibliotheque;
         $bibliotheque->setTitre($_POST['titre']);
         $bibliotheque->setAuteur($_POST['auteur']);
-        $bibliotheque->setRésumé($_POST['résumé']);
-        $bibliotheque->setCatégorie($_POST['catégorie']);
+        $bibliotheque->setRésumé($_POST['resume']);
+        $bibliotheque->setCatégorie($_POST['categorie']);
         $bibliotheque->setGenre($_POST['genre']);
         $bibliotheque->setDelai($_POST['delai']);
         $bibliotheque->setPrix($_POST['prix']);
-        $bibliotheque->setDateDeParution($_POST['date'], $_POST['time']);
+        $bibliotheque->setDateDeParution($_POST['dateDeParution']);
         $bibliotheque->setCouverture($_FILES['couverture']);
 
         $bibliotheque->save();
 
-        BibliothequesController::index();
+       // BibliothequesController::index();
     }
 
     public function livresByGenre($genre) {
