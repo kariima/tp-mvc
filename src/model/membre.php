@@ -10,6 +10,7 @@ class Membre extends Db
     protected $prenom;
     protected $mail;
     protected $photo;
+    protected $renouvellement;
 
     public function setId($id)
     {
