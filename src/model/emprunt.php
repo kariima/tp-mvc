@@ -8,7 +8,7 @@ class Emprunt extends Db {
     protected $ArticleId;
     protected $LecteurId;
     protected $DateEmprunt;
-    protected $setRenouvellement;
+    protected $Renouvellement_Emprunt;
 
 
     public function setId($id) {
@@ -35,6 +35,14 @@ class Emprunt extends Db {
         return $this;
     }
 
+    public function setRenouvellement_Emprunt($Renouvellement_Emprunt) {
+        if ($Renouvellement_Emprunt > 3) {
+                        throw new Exception('Le nombre de renouvellement est dépassé, vous devez relouer cet article');
+        }
+        $this->Renouvellement_Emprunt = $Renouvellement_Emprunt;
+        return $this;
+    }
+
 
     public function getId() {
         return $this->id;
@@ -52,6 +60,10 @@ class Emprunt extends Db {
         return $this->DateEmprunt;
     }
 
+    public function getRenouvellement_Emprunt() {
+        return $this->Renouvellement_Emprunt;
+    }
+
 
     public function save()
     {
@@ -60,6 +72,7 @@ class Emprunt extends Db {
             "article_id"    => $this->getArticleId(),
             "lecteur_id"    => $this->getLecteurId(),
             "date_emprunt"  => $this->getDateEmprunt(),
+            "renouvellement_emprunt"  => $this->getRenouvellement_Emprunt(),
         ];
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
@@ -79,6 +92,7 @@ class Emprunt extends Db {
             $emprunt->setArticleId($d['article_id']);
             $emprunt->setLecteurId($d['lecteur_id']);
             $emprunt->setDateEmprunt($d['date_emprunt']);
+            $emprunt->setRenouvellement_Emprunt($d['renouvellement_emprunt']);
 
             $objects[] = $emprunt;
         }
