@@ -13,9 +13,9 @@
         <?php foreach ($emprunts as $emprunt) : ?>
             <tr>
                 <tbody class="tbody-light text-center">
-                    <td> <?= ($_GET['article_id']) ?></td>
-                    <td> <?= ($_GET['lecteur_id']) ?>;</td>
-                    <td> <?= ($_GET['date_emprunt']) ?>;</td>
+                    <td> <?= ($emprunt['article_id']) ?></td>
+                    <td> <?= ( $emprunt['lecteur_id']) ?>;</td>
+                    <td> <?= ( $emprunt['date_emprunt']) ?>;</td>
             </tr>
 
         <?php endforeach; ?>
