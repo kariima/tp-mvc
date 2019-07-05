@@ -9,7 +9,6 @@
             <th class="card-header">Nom </th>
             <th class="card-header">Prénom </th>
             <th class="card-header">Email </th>
-            <th class="card-header">Renouveler ? </th>
         </tr>
 
 
