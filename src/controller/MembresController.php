@@ -29,7 +29,7 @@ class MembresController
         $membre->setCarteBancaire($_POST['carte_bancaire']);
         $membre->setPhoto($_FILES['photo']);
         $membre->setMotDePasse($_POST['password']);
-        $membre->setRenouvellement($_POST['renouvellement']);
+  
 
         $membre->save();
 
