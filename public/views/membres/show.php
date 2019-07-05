@@ -12,7 +12,7 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Photo</label>
                         <div class="col-lg-6">
-                            <input class="form-control" name="photo" type="text" value="<?php ($_GET['photo']) ?>" placeholder="Photo">
+                            <input class="form-control" name="photo" type="text" value="<?= $membre['photo'] ?>" placeholder="Photo">
                         </div>
                     </div>
 
