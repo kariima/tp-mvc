@@ -21,7 +21,7 @@
         <tbody>
             <?php foreach ($bibliotheque as $b) : ?>
                 <tr class="card-body mt-2">
-                    <td class="card-text m-2"><a href="oeuvre-individuelle.php?id=<?= $b['id'] ?>"><?= $b['titre'] ?></a></td>
+                    <td class="card-text m-2"><a href="<?= url('oeuvre-individuelle/' . $b['id']) ?>"><?= $b['titre'] ?></a></td>
                     <td class="card-text m-2"><?= $b['couverture'] ?></td>
                     <td class="card-text m-2"><?= $b['auteur'] ?></td>
                     <td class="card-text m-2"><?= substr($b['resume'], 0, 30) . "..." ?></td>

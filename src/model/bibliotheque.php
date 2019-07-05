@@ -225,4 +225,27 @@ class Bibliotheque extends Db
 
         return $data;
     }
+
+    public function update()
+    {
+        if ($this->id > 0) {
+            $data = [
+                "firstname"  => $this->firstname(),
+                "surname"   => $this->surname()
+            ];
+            Db::dbUpdate(self::TABLE_NAME, $data);
+            return $this;
+        }
+        return;
+    }
+
+    public function delete()
+    {
+        $data = [
+            'id' => $this->id(),
+        ];
+
+        Db::dbDelete(self::TABLE_NAME, $data);
+        return;
+    }
 }

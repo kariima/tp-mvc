@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 
-<?php require 'header.php' ?>
 
 <h1>Description de l'oeuvre : </h1>
 
@@ -10,7 +9,7 @@
         <div class="row mt-3">
             <div class="col-12">
 
-                <a href="liste-bibliotheque.php" class="btn btn-primary btn-sm mb-2">
+                <a href="<?= url('liste-bibliotheque') ?>" class="btn btn-primary btn-sm mb-2">
                     < Retour</a> <div class="card">
                         <div class="card-header"><?= $bibliotheque['titre'] ?> <?= $bibliotheque['couverture'] ?></div>
 

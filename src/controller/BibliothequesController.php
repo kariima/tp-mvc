@@ -16,10 +16,10 @@ class BibliothequesController {
         view('bibliotheque.ajout-bibliotheque');
     }
 
-    public function show($bibliotheque) {
+    public function show(int $id) {
 
-        $bibliotheque = Bibliotheque::findOne($bibliotheque);
-        view('oeuvre-individuelle.show', compact('bibliotheque'));
+        $bibliotheque = Bibliotheque::findOne($id);
+        view('bibliotheque.show', compact('bibliotheque'));
     }
 
     public function save() {
@@ -47,6 +47,30 @@ class BibliothequesController {
 
         Header('Content-type: application/json');
         echo $livresJson;
+    }
+
+    class StudentController {
+        public function update($id)
+        {
+            $student = Student::findOne($id);
+            $student->setFirstname($_POST['firstname']);
+            $student->update();
+
+            // On redirige vers la page de l'étudiant
+            Header('Location: ' . url('students/' . $student->getId()));
+        }
+    }
+
+    class StudentsController
+    {
+        public function delete($id)
+        {
+            $student = Db::findOne($id);
+            $student->delete();
+
+            // On redirige vers la liste des étudiants
+            Header('Location: ' . url('students'));
+        }
     }
 
 }
