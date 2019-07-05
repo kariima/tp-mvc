@@ -14,7 +14,7 @@
 
 
         <?php foreach ($membres as $m) : ?>
-            <tr class="card-body mt-2">
+            <tr class="card-body mt-2 text-center">
                 <td class="card-text m-2"><?= $m['photo'] ?></td>
                 <td class="card-text m-2"><?= $m['nom'] ?></td>
                 <td class="card-text m-2"><?= $m['prenom'] ?></td>
