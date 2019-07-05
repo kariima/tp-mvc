@@ -2,7 +2,7 @@
 
 
 <h1>Ajouter un membre : </h1>
-<form id="form" action="<?= url('ajout-membre') ?>" method="post">
+<form id="form" action="<?= url('ajout-membre') ?>" method="post" enctype="multipart/form-data">
     <div class="col-9">
         <div class="form-group row">
             <label class="col-lg-3 col-form-label form-control-label">Photo</label>

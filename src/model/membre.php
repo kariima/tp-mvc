@@ -139,22 +139,22 @@ public function getId()
         return $this->motdepasse;
     }
 
-    public function getCp($cp)
+    public function getCp()
     {
-        $this->cp = $cp;
-        return $this;
+        return  $this->cp;
+    
     }
 
-    public function getVille($ville)
+    public function getVille()
     {
-        $this->ville = $ville;
-        return $this;
+        return $this->ville;
+    
     }
 
-    public function getCarteBancaire($cartebancaire)
+    public function getCarteBancaire()
     {
-        $this->cartebancaire = $cartebancaire;
-        return $this;
+        return $this->cartebancaire;
+       
     }
 
     public function save()
