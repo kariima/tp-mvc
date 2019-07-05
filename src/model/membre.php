@@ -115,8 +115,8 @@ class Membre extends Db
             "prenom"    => $this->getPrenom(),
             "email"    => $this->getEmail(),
             "photo"     => $this->getPhoto(),
-            "renouvellement" => $this->getRenouvellement()
-            "mot de passe" => $this->getMotDePasse()
+            "renouvellement" => $this->getRenouvellement(),
+            "mot_de_passe" => $this->getMotDePasse()
         ];
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
