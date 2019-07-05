@@ -1,5 +1,8 @@
 <?php ob_start(); ?>
 
+<!-- page en cours de modif (code copie de celui de la page) -->
+
+
 <h1>Votre compte Kindle </h1>
 
 <div class="container">
