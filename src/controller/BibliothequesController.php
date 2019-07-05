@@ -49,28 +49,40 @@ class BibliothequesController {
         echo $livresJson;
     }
 
-    class StudentController {
         public function update($id)
         {
-            $student = Student::findOne($id);
-            $student->setFirstname($_POST['firstname']);
-            $student->update();
+        $bibliotheque = Bibliotheque::findOne($id);
+        $bibliotheque->setTitre($_POST['titre']);
+        $bibliotheque->setAuteur($_POST['auteur']);
+        $bibliotheque->setRésumé($_POST['resume']);
+        $bibliotheque->setCatégorie($_POST['categorie']);
+        $bibliotheque->setGenre($_POST['genre']);
+        $bibliotheque->setDelai($_POST['delai']);
+        $bibliotheque->setPrix($_POST['prix']);
+        $bibliotheque->setDateDeParution($_POST['dateDeParution']);
+        $bibliotheque->setCouverture($_FILES['couverture']);
+        $bibliotheque->update();
 
             // On redirige vers la page de l'étudiant
-            Header('Location: ' . url('students/' . $student->getId()));
+            Header('Location: ' . url('bibliotheque/' . $bibliotheque->getId()));
         }
-    }
-
-    class StudentsController
-    {
+    
         public function delete($id)
         {
-            $student = Db::findOne($id);
-            $student->delete();
+        $bibliotheque = Bibliotheque::findOne($id);
+        $bibliotheque->delete();
 
             // On redirige vers la liste des étudiants
-            Header('Location: ' . url('students'));
+            redirectTo('liste-bibliotheque');
         }
+
+    public function edit($id)
+    {
+        $bibliotheque = Bibliotheque::findOne($id);
+        
+
+        view('bibliotheque.edit', compact('bibliotheque'));
     }
+    
 
 }
