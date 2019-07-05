@@ -16,6 +16,12 @@ class BibliothequesController {
         view('bibliotheque.ajout-bibliotheque');
     }
 
+    public function show($bibliotheque) {
+
+        $bibliotheque = Bibliotheque::findOne($bibliotheque);
+        view('oeuvre-individuelle.show', compact('bibliotheque'));
+    }
+
     public function save() {
         $bibliotheque = new Bibliotheque;
         $bibliotheque->setTitre($_POST['titre']);
@@ -30,7 +36,7 @@ class BibliothequesController {
 
         $bibliotheque->save();
 
-       // BibliothequesController::index();
+        redirectTo('liste-bibliotheque');
     }
 
     public function livresByGenre($genre) {

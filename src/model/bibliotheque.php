@@ -205,6 +205,18 @@ class Bibliotheque extends Db
         return $data;
     }
 
+    public static function findOne(int $id)
+    {
+        $request = [
+            ['id', '=', $id]
+        ];
+        $bibliotheque = Db::dbFind(self::TABLE_NAME, $request);
+        if (count($bibliotheque) > 0) $bibliotheque = $bibliotheque[0];
+        else return;
+
+        return $bibliotheque;
+    }
+
     public static function findByGenre($genre)
     {
         $data = Db::dbFind(self::TABLE_NAME, [

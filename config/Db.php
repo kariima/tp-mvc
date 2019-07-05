@@ -42,10 +42,7 @@ class Db {
 
         $response = $bdd->prepare($req);
 
-        dump($req);
-        dump($data);
         $response->execute($data);
-        dump($bdd->errorInfo());
 
         return $bdd->lastInsertId();
     }

@@ -9,6 +9,7 @@ $router->get('', 'PagesController@home' );
 $router->get('liste-bibliotheque', 'BibliothequesController@index');
 $router->get('ajout-bibliotheque', 'BibliothequesController@add');
 $router->post('ajout-bibliotheque', 'BibliothequesController@save');
+$router->get('oeuvre-individuelle/{id}', 'BibliothequesController@show');
 
 $router->get('bibliotheque/genre/{genre}', 'BibliothequesController@livresByGenre');
 
