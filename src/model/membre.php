@@ -10,8 +10,13 @@ class Membre extends Db
     protected $prenom;
     protected $mail;
     protected $photo;
+    protected $adresse;
     protected $renouvellement;
     protected $motdepasse;
+    protected $cp;
+    protected $ville;
+    protected $cartebancaire;
+
 
     public function setId($id)
     {
@@ -34,6 +39,12 @@ class Membre extends Db
     public function setEmail($mail)
     {
         $this->mail = $mail;
+        return $this;
+    }
+
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
         return $this;
     }
 
@@ -68,13 +79,32 @@ class Membre extends Db
     
     }
 
-    public function setMotDePasse($motdepase)
+    public function setMotDePasse($motdepasse)
     {
         $this->motdepasse = $motdepasse;
         return $this;
     }
 
-    public function getId()
+    public function setCp($cp)
+    {
+        $this->cp = $cp;
+        return $this;
+    }
+
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+        return $this;
+    }
+
+    public function setCarteBancaire($cartebancaire)
+    {
+        $this->cartebancaire = $cartebancaire;
+        return $this;
+    }
+
+
+public function getId()
     {
         return $this->id;
     }
@@ -85,6 +115,10 @@ class Membre extends Db
     public function getPrenom()
     {
         return $this->prenom;
+    }
+    public function getAdresse()
+    {
+        return $this->adresse;
     }
     public function getEmail()
     {
@@ -105,18 +139,39 @@ class Membre extends Db
         return $this->motdepasse;
     }
 
+    public function getCp($cp)
+    {
+        $this->cp = $cp;
+        return $this;
+    }
+
+    public function getVille($ville)
+    {
+        $this->ville = $ville;
+        return $this;
+    }
+
+    public function getCarteBancaire($cartebancaire)
+    {
+        $this->cartebancaire = $cartebancaire;
+        return $this;
+    }
+
     public function save()
     {
-
-
         $data = [
-            "id"    => $this->getId(),
             "nom"    => $this->getNom(),
             "prenom"    => $this->getPrenom(),
-            "email"    => $this->getEmail(),
+            "mail"    => $this->getEmail(),
             "photo"     => $this->getPhoto(),
             "renouvellement" => $this->getRenouvellement(),
-            "mot_de_passe" => $this->getMotDePasse()
+            "mot_de_passe" => $this->getMotDePasse(),
+            "adresse" => $this->getAdresse(),
+            "cp" => $this->getCp(),
+            "ville" => $this->getVille(),
+            "carte_bancaire" => $this->getCarteBancaire()
+
+
         ];
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
