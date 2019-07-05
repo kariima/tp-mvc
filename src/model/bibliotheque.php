@@ -69,9 +69,6 @@ class Bibliotheque extends Db
 
     public function setGenre( $genre)
     {
-        if ($_POST['genre'] != $genre) {
-            throw new Exception ("Veuillez choisir un genre dans la liste déroulante.");
-        }
         $this->genre = $genre;
         return $this;
     }
@@ -96,7 +93,7 @@ class Bibliotheque extends Db
 
     public function setDateDeParution($dateDeParution)
     {
-        $dateFormat = DateTime::createFromFormat('Y-m-d', $dateDeParution);
+        $dateFormat = DateTime::createFromFormat('Y-m-d H:i:s', $dateDeParution);
 
         if (!$dateFormat) {
             throw new Exception('La date a un format incorrect.');
@@ -210,9 +207,21 @@ class Bibliotheque extends Db
         $request = [
             ['id', '=', $id]
         ];
-        $bibliotheque = Db::dbFind(self::TABLE_NAME, $request);
-        if (count($bibliotheque) > 0) $bibliotheque = $bibliotheque[0];
+        $element = Db::dbFind(self::TABLE_NAME, $request);
+        if (count($element) > 0) $element = $element[0];
         else return;
+
+        $bibliotheque = new Bibliotheque;
+        $bibliotheque->setId( $element['id'] );
+        $bibliotheque->setTitre( $element['titre'] );
+        $bibliotheque->setAuteur( $element['auteur'] );
+        $bibliotheque->setRésumé( $element['resume'] );
+        $bibliotheque->setCatégorie( $element['categorie'] );
+        $bibliotheque->setGenre( $element['genre'] );
+        $bibliotheque->setDelai( $element['delai'] );
+        $bibliotheque->setPrix( $element['prix'] );
+        $bibliotheque->setDateDeParution( $element['date_de_parution'] );
+        $bibliotheque->setCouverture( $element['couverture'] );
 
         return $bibliotheque;
     }
@@ -226,12 +235,22 @@ class Bibliotheque extends Db
         return $data;
     }
 
+    
+
     public function update()
     {
         if ($this->id > 0) {
             $data = [
-                "firstname"  => $this->firstname(),
-                "surname"   => $this->surname()
+                "id"                => $this->getId(),
+                "titre"             => $this->getTitre(),
+                "auteur"            => $this->getAuteur(),
+                "resume"            => $this->getRésumé(),
+                "categorie"         => $this->getCatégorie(),
+                "genre"             => $this->getGenre(),
+                "delai"             => $this->getDelai(),
+                "prix"              => $this->getPrix(),
+                "date_de_parution"  => $this->getDateDeParution(),
+                "couverture"        => $this->getCouverture(),
             ];
             Db::dbUpdate(self::TABLE_NAME, $data);
             return $this;
@@ -242,7 +261,7 @@ class Bibliotheque extends Db
     public function delete()
     {
         $data = [
-            'id' => $this->id(),
+            'id' => $this->getId(),
         ];
 
         Db::dbDelete(self::TABLE_NAME, $data);

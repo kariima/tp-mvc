@@ -27,13 +27,13 @@
         <select name="genre" id="" class="form-control">
             <option selected enabled>Choisir un genre... </option>
 
-            <option value="1">Thriller</option>
-            <option value="2">Policier</option>
-            <option value="3">Fantastique</option>
-            <option value="4">Horreur</option>
-            <option value="5">Comédie</option>
-            <option value="6">Science</option>
-            <option value="7">Onirique</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Policier">Policier</option>
+            <option value="Fantastique">Fantastique</option>
+            <option value="Horreur">Horreur</option>
+            <option value="Comédie">Comédie</option>
+            <option value="Science">Science</option>
+            <option value="Onirique">Onirique</option>
         </select>
     </div>
 
