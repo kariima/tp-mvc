@@ -20,19 +20,20 @@ class MembresController
     {
         
         $membre = new Membre;
-        $membre->setId($_POST['id']);
         $membre->setNom($_POST['nom']);
         $membre->setPrenom($_POST['prenom']);
-        $membre->setMail($_POST['mail']);
+        $membre->setEmail($_POST['mail']);
         $membre->setAdresse($_POST['adresse']);
-        $membre->setCP($_POST['cp']);
+        $membre->setCp($_POST['cp']);
         $membre->setVille($_POST['ville']);
-        $membre->setCarteBancaire($_POST['carte bancaire']);
+        $membre->setCarteBancaire($_POST['carte_bancaire']);
         $membre->setPhoto($_FILES['photo']);
-        $membre->setMotDePasse($_POST['mot_de_passe']);
+        $membre->setMotDePasse($_POST['password']);
         $membre->setRenouvellement($_POST['renouvellement']);
 
         $membre->save();
+
+        redirectTo( 'liste-membre');
     }
 
 
