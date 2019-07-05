@@ -11,6 +11,7 @@ class Membre extends Db
     protected $mail;
     protected $photo;
     protected $renouvellement;
+    protected $motdepasse;
 
     public function setId($id)
     {
@@ -66,6 +67,13 @@ class Membre extends Db
         }
     
     }
+
+    public function setMotDePasse($motdepase)
+    {
+        $this->motdepasse = $motdepasse;
+        return $this;
+    }
+
     public function getId()
     {
         return $this->id;
@@ -92,6 +100,11 @@ class Membre extends Db
         return $this->renouvellement;
     }
 
+    public function getMotDePasse()
+    {
+        return $this->motdepasse;
+    }
+
     public function save()
     {
 
@@ -102,7 +115,8 @@ class Membre extends Db
             "prenom"    => $this->getPrenom(),
             "email"    => $this->getEmail(),
             "photo"     => $this->getPhoto(),
-            "renouvellement" => $this->getRenouvellement()
+            "renouvellement" => $this->getRenouvellement(),
+            "mot_de_passe" => $this->getMotDePasse()
         ];
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
