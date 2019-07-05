@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<a href="<?php url('liste-bibliotheque') ?>" class="btn btn-danger btn-sm mb-2">Retour</a>
+<a href="<?= url('liste-bibliotheque') ?>" class="btn btn-danger btn-sm mb-2">Retour</a>
 
 <form action="<?= url('ajout-bibliotheque') ?>" method="POST" class="form" enctype="multipart/form-data">
 

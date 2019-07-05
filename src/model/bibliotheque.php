@@ -195,7 +195,6 @@ class Bibliotheque extends Db
 
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
-        dump($nouvelId);
         $this->setId($nouvelId);
         return $this;
     }

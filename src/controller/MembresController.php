@@ -29,9 +29,12 @@ class MembresController
         $membre->setVille($_POST['ville']);
         $membre->setCarteBancaire($_POST['carte bancaire']);
         $membre->setPhoto($_FILES['photo']);
+        $membre->setMotDePasse($_POST['mot_de_passe']);
+        $membre->setRenouvellement($_POST['renouvellement']);
 
         $membre->save();
     }
+
 
     public function show($membre)
     {
