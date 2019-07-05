@@ -19,7 +19,7 @@
         <option value="Fantastique">Fantastique</option>
         <option value="Horreur">Horreur</option>
         <option value="Comédie">Comédie</option>
-        <option value="Science">Science</option>
+        <option value="Science-fiction">Science</option>
         <option value="Onirique">Onirique</option>
     </select>
 </form>
