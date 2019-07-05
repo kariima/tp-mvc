@@ -1,98 +1,102 @@
 <?php ob_start(); ?>
 
-<h1>Votre compte Kindle </h1>
+
 
 <div class="container">
+    <h1 class='mb-5'>Votre compte Kindle</h1>
+    
     <div class="row">
         <div class="col-12">
-            
-            <div class="tab-pane" id="edit">
-                <h4 class="m-y-2">Modifier informations</h4>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Photo</label>
-                        <div class="col-lg-6">
-                            <input class="form-control" name="photo" type="text" value="<?php ($_GET['photo']) ?>" placeholder="Photo">
-                        </div>
-                    </div>
+    <!-- NAVIGATION -->
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Prénom</label>
-                        <div class="col-lg-9">
-                            <input class="form-control" name="prenom" type="text" value="<?= $membre['prenom'] ?>">
-                        </div>
-                    </div>
+            <ul class="nav nav-tabs bg-warning" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="ID_TAB" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Votre profil Kindle</a>
+                </li>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Nom</label>
-                        <div class="col-lg-9">
-                            <input class="form-control" name="nom" type="text" value="<?= $membre['Nom'] ?>">
-                        </div>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                </li>
+            </ul>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                        <div class="col-lg-9">
-                            <input class="form-control" name="mail" type="email" value="<?= $membre['mail'] ?>">
-                        </div>
-                    </div>
+    <!-- TABLEAU -->
+            <div class="tab-content" id="myTabContent">
+                
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Addresse</label>
-                        <div class="col-lg-9">
-                            <input class="form-control" name="adresse" type="text" value="" placeholder="<?= $membre['adresse']?>">
+                <!-- PANNEAU CARTE IDENTITE -->
+                
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <!-- PHOTO -->
+                    <div class="col-3">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <img src="VINDRA_MONOI.jpg" class="card-img" alt="...">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Ville</label>
-                        <div class="col-lg-6">
-                            <input class="form-control" name="ville" type="text" value="<?= $membre['Ville']?>"" placeholder="Ville">
-                        </div>
-                    </div>
+                    <div class="col-6">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                <th scope="row">Prénom</th>
+                                <td><?= $membre['prenom'] ?></td>
+                                </tr>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Code postal</label>
-                        <div class="col-lg-6">
-                            <input class="form-control" name="cp" type="text" value="<?= $membre['cp']?>" placeholder="cp">
-                        </div>
-                    </div>
+                                <tr>
+                                <th scope="row">Nom</th>
+                                <td><?= $membre['nom'] ?></td>
+                                </tr>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Carte bancaire</label>
-                        <div class="col-lg-6">
-                            <input class="form-control" name="carte bancaire" type="text" value="<?= $membre['cp']?>" placeholder="carte bancaire">
-                        </div>
-                    </div>
-                   
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Mot de passe</label>
-                        <div class="col-lg-9">
-                            <input class="form-control" type="password" value="">
-                        </div>
-                    </div>
+                                <tr>
+                                <th scope="row">Email</th>
+                                <td><?= $membre['mail'] ?></td>
+                                </tr>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Confirmer mot de passe</label>
-                        <div class="col-lg-9">
-                            <input class="form-control" type="password" value="">
-                        </div>
+                                <tr>
+                                <th scope="row">Adresse</th>
+                                <td><?= $membre['adresse']?></td>
+                                </tr>
+
+                                <tr>
+                                <th scope="row">Ville</th>
+                                <td><?= $membre['ville']?></td>
+                                </tr>
+
+                                <tr>
+                                <th scope="row">Code Postal</th>    
+                                <td><?= $membre['cp']?></td>
+                                </tr>
+                            <tbody>
+                        </table>
                     </div>
-                    
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label"></label>
-                        <div class="col-lg-9">
-                            <input type="reset" class="btn btn-secondary" value="Supprimer">
-                            <input type="button" class="btn btn-primary" value="Sauvergarder">
-                        </div>
-                    </div>
-                </form>
+                </div>
+
             </div>
+
+                <!-- TABLEAU EMPRUNT -->
+
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <p>lalala</p>
+            </div>
+
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <p>lalala</p>
+            </div>
+
+
+        <!-- TABLEAU COORDONEES BANCAIRES -->
+
         </div>
     </div>
+</div>
 
-</div>
-</div>
-<hr>
+
+
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
