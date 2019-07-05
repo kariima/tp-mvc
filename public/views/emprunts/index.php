@@ -11,8 +11,8 @@
         </tr>
 
         <tr>
-            <td> <?= ($_GET['article-id']) ?></td>
-            <td> <?= ($_GET['lecteur-id']) ?>;</td>
+            <td> <?= ($_GET['article_id']) ?></td>
+            <td> <?= ($_GET['lecteur_id']) ?>;</td>
             <td> <?= ($_GET['date_emprunt']) ?>;</td>
         </tr>
     </table>
