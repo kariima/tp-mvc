@@ -69,6 +69,52 @@ class Emprunt extends Db {
 
     public static function findAll() {
         $data = Db::dbFind(self::TABLE_NAME);
-        return $data;
+
+        $objects = [];
+        
+        /* On transforme nos arrays en objets de type Emprunt */
+        foreach($data as $d) {
+            $emprunt = new Emprunt;
+            $emprunt->setId($d['id']);
+            $emprunt->setArticleId($d['article_id']);
+            $emprunt->setLecteurId($d['lecteur_id']);
+            $emprunt->setDateEmprunt($d['date_emprunt']);
+
+            $objects[] = $emprunt;
+        }
+
+        return $objects;
+    }
+
+    public function getMembre() {
+        // J'utilise getDb de la classe Db qui me donne un pointeur PDO.
+		$bdd = Db::getDb();
+
+		// Définition de la requête
+		$req = "SELECT *
+				FROM `emprunts`
+				INNER JOIN compte_lecteur ON emprunts.lecteur_id =  compte_lecteur.id
+            WHERE emprunts.id = " . $this->getId();
+
+		$res = $bdd->query($req);
+		$courses = $res->fetch(PDO::FETCH_ASSOC);
+
+		return $courses;
+    }
+
+    public function getLivre() {
+        // J'utilise getDb de la classe Db qui me donne un pointeur PDO.
+		$bdd = Db::getDb();
+
+		// Définition de la requête
+		$req = "SELECT *
+				FROM `emprunts`
+				INNER JOIN bibliotheque ON emprunts.article_id =  bibliotheque.id
+            WHERE emprunts.id = " . $this->getId();
+
+		$res = $bdd->query($req);
+		$courses = $res->fetch(PDO::FETCH_ASSOC);
+
+		return $courses;
     }
 }

@@ -205,6 +205,18 @@ class Bibliotheque extends Db
         return $data;
     }
 
+    public static function findOne(int $id)
+    {
+        $request = [
+            ['id', '=', $id]
+        ];
+        $bibliotheque = Db::dbFind(self::TABLE_NAME, $request);
+        if (count($bibliotheque) > 0) $bibliotheque = $bibliotheque[0];
+        else return;
+
+        return $bibliotheque;
+    }
+
     public static function findByGenre($genre)
     {
         $data = Db::dbFind(self::TABLE_NAME, [
@@ -212,5 +224,28 @@ class Bibliotheque extends Db
         ]);
 
         return $data;
+    }
+
+    public function update()
+    {
+        if ($this->id > 0) {
+            $data = [
+                "firstname"  => $this->firstname(),
+                "surname"   => $this->surname()
+            ];
+            Db::dbUpdate(self::TABLE_NAME, $data);
+            return $this;
+        }
+        return;
+    }
+
+    public function delete()
+    {
+        $data = [
+            'id' => $this->id(),
+        ];
+
+        Db::dbDelete(self::TABLE_NAME, $data);
+        return;
     }
 }
