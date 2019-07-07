@@ -14,9 +14,6 @@ $router->post('oeuvre-individuelle/{id}/edit', 'BibliothequesController@update')
 $router->get('oeuvre-individuelle/{id}/delete', 'BibliothequesController@delete');
 $router->get('oeuvre-individuelle/{id}', 'BibliothequesController@show');
 
-
-
-
 $router->get('bibliotheque/genre/{genre}', 'BibliothequesController@livresByGenre');
 
 $router->get('ajout-emprunt/{idUser}/{idLivre}', 'EmpruntsController@save');
@@ -27,6 +24,12 @@ $router->get('liste-membre', 'MembresController@index');
 $router->get('ajout-membre', 'MembresController@add');
 $router->post('ajout-membre', 'MembresController@save');
 $router->get('profil-membre/{id}', 'MembresController@show');
+
+$router->get('liste-reviews', 'ReviewsController@index');
+$router->get('ajout-review', 'ReviewsController@add');
+$router->post('ajout-review', 'ReviewsController@save');
+$router->get('liste-reviews/{id}', 'ReviewsController@show');
+
 
 
 // Run it!
