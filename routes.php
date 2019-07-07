@@ -28,7 +28,6 @@ $router->get('profil-membre/{id}', 'MembresController@show');
 $router->get('liste-reviews', 'ReviewsController@index');
 $router->get('ajout-review', 'ReviewsController@add');
 $router->post('ajout-review', 'ReviewsController@save');
-$router->get('liste-reviews/{id}', 'ReviewsController@show');
 
 
 

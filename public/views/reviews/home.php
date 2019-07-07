@@ -16,17 +16,16 @@
         <tbody>
             <?php foreach ($review as $r) : ?>
                 <tr class="card-body mt-2">
-                    <td class="card-text m-2"><a href="<?= url('oeuvre-individuelle/' . $b['id']) ?>"><?= $b['titre'] ?></a></td>
-                    <td class="card-text m-2"><?= $b['couverture'] ?></td>
-                    <td class="card-text m-2"><?= $b['auteur'] ?></td>
-                    <td class="card-text m-2"><?= substr($b['resume'], 0, 30) . "..." ?></td>
+                    <td class="card-text m-2"><?= $r->getLivre()['titre'] ?></td>
+                    <td class="card-text m-2"><?= $r->getMembre()['prenom']?> <?= $r->getMembre()['nom'] ?></td>
+                    <td class="card-text m-2"><?= $r['note'] ?></td>
+                    <td class="card-text m-2"><?= substr($r['commentaire'], 0, 30) . "..." ?></td>
                 </tr>
 
             <?php endforeach; ?>
         </tbody>
     </table>
 
-    <a href="<?= url('ajout-bibliotheque') ?>" class="btn btn-danger btn-sm mb-2">Ajouter une oeuvre</a>
 
 
 

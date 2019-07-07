@@ -5,23 +5,28 @@
 class ReviewsController 
     {
 
-    public function home() {
+    
+
+        public function add()
+        {
+            $reviews = Membre::findAll();
+            view('reviews.add', compact('reviews'));
+        }
+
+        public function home() {
 
         $reviews = review::findAll();
-        view('reviews.index', compact('reviews'));
+        view('reviews.home', compact('reviews'));
 
         }
     
-        public function add()
-        {
 
-            view('reviews.add');
-        }
         
         public function save()
         {
             
             $review = new Review;
+            $review->setId($_POST['id']);
             $review->setLecteurId($_POST['lecteurId']);
             $review->setArticleId($_POST['articleId']);
             $review->setNote($_POST['note']);
@@ -31,10 +36,5 @@ class ReviewsController
     
             redirectTo('liste-reviews');
         }
-        public function show($review)
-        {
-    
-            $review = Review::findOne($review);
-            view('review.show', compact('review'));
-        }
+
     }

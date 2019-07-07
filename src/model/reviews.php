@@ -1,60 +1,61 @@
 <?php
 
-class Membre extends Db
+class Review extends Db
 {
-
     const TABLE_NAME = "reviews";
+
+    protected $id;
+    protected $note;
+    protected $commentaire;
+    protected $lecteurId;
+    protected $articleId;
+
+
+
+    
     public function setId($id) {
         $this->id = $id;
         return $this;
     }
 
-    public function setArticleId($ArticleId) {
-        $this->ArticleId = $ArticleId;
+    public function setNote($note){
+        $this->note = $note;
         return $this;
     }
 
-    public function setLecteurId($LecteurId) {
-        $this->LecteurId = $LecteurId;
+    public function setCommentaire($commentaire) {
+        $this->commentaire = $commentaire;
         return $this;
     }
 
-    public function setDateEmprunt($DateEmprunt) {
-        $dateFormat = DateTime::createFromFormat('Y-m-d', $DateEmprunt);
-        if (!$dateFormat) {
-                        throw new Exception('La date a un format incorrect.');
-        }
-        $this->DateEmprunt = $DateEmprunt;
+    public function setLecteurId($lecteurId) {
+        $this->lecteurId = $lecteurId;
         return $this;
     }
 
-    public function setRenouvellement_Emprunt($Renouvellement_Emprunt) {
-        if ($Renouvellement_Emprunt > 3) {
-                        throw new Exception('Le nombre de renouvellement est dépassé, vous devez relouer cet article');
-        }
-        $this->Renouvellement_Emprunt = $Renouvellement_Emprunt;
+    public function setArticleId($articleId) {
+        $this->articleId = $articleId;
         return $this;
     }
-
 
     public function getId() {
         return $this->id;
     }
 
-    public function getArticleId() {
-        return $this->ArticleId;
+    public function getNote() {
+        return $this->note;
+    }
+
+    public function getCommentaire() {
+        return $this->commentaire;
     }
 
     public function getLecteurId() {
-        return $this->LecteurId;
+        return $this->lecteurId;
     }
 
-    public function getDateEmprunt() {
-        return $this->DateEmprunt;
-    }
-
-    public function getRenouvellement_Emprunt() {
-        return $this->Renouvellement_Emprunt;
+    public function getArticleId() {
+        return $this->articleId;
     }
 
 
@@ -62,10 +63,11 @@ class Membre extends Db
     {
         $data = [
             "id"    => $this->getId(),
-            "article_id"    => $this->getArticleId(),
-            "lecteur_id"    => $this->getLecteurId(),
-            "date_emprunt"  => $this->getDateEmprunt(),
-            "renouvellement_emprunt"  => $this->getRenouvellement_Emprunt(),
+            "note"  => $this->getNote(),
+            "commentaire"  => $this->getCommentaire(),
+            "articleId"    => $this->getArticleId(),
+            "lecteurId"    => $this->getLecteurId(),
+
         ];
         //if ($this->id > 0) return $this->update();
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
@@ -80,14 +82,14 @@ class Membre extends Db
         
         /* On transforme nos arrays en objets de type Emprunt */
         foreach($data as $d) {
-            $emprunt = new Emprunt;
-            $emprunt->setId($d['id']);
-            $emprunt->setArticleId($d['article_id']);
-            $emprunt->setLecteurId($d['lecteur_id']);
-            $emprunt->setDateEmprunt($d['date_emprunt']);
-            $emprunt->setRenouvellement_Emprunt($d['renouvellement_emprunt']);
+            $review = new Review;
+            $review->setId($d['id']);
+            $review->setNote($d['note']);
+            $review->setCommentaire($d['commentaire']);
+            $review->setArticleId($d['articleId']);
+            $review->setLecteurId($d['lecteurId']);
 
-            $objects[] = $emprunt;
+            $objects[] = $review;
         }
 
         return $objects;
@@ -99,9 +101,9 @@ class Membre extends Db
 
 		// Définition de la requête
 		$req = "SELECT *
-				FROM `emprunts`
-				INNER JOIN compte_lecteur ON emprunts.lecteur_id =  compte_lecteur.id
-            WHERE emprunts.id = " . $this->getId();
+				FROM `reviews`
+				INNER JOIN compte_lecteur ON reviews.lecteurId =  compte_lecteur.id
+            WHERE reviews.id = " . $this->getId();
 
 		$res = $bdd->query($req);
 		$courses = $res->fetch(PDO::FETCH_ASSOC);
@@ -115,9 +117,9 @@ class Membre extends Db
 
 		// Définition de la requête
 		$req = "SELECT *
-				FROM `emprunts`
-				INNER JOIN bibliotheque ON emprunts.article_id =  bibliotheque.id
-            WHERE emprunts.id = " . $this->getId();
+				FROM `reviews`
+				INNER JOIN bibliotheque ON reviews.articleId =  bibliotheque.id
+            WHERE reviews.id = " . $this->getId();
 
 		$res = $bdd->query($req);
 		$courses = $res->fetch(PDO::FETCH_ASSOC);
