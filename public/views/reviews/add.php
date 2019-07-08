@@ -27,31 +27,31 @@
     <div class="input-group">
         <div class="input-group-prepend">
             <div class="input-group-text">
-                <input type="radio" aria-label="Radio button for following text input" name="note" value="1"> 1
+                <input type="radio" aria-label="Radio button for following text input" name="note" value="1" class="mr-2"> 1
             </div>
         </div>
 
         <div class="input-group-prepend">
             <div class="input-group-text">
-                <input type="radio" aria-label="Radio button for following text input" name="note" value="2"> 2
+                <input type="radio" aria-label="Radio button for following text input" name="note" value="2" class="mr-2"> 2
             </div>
         </div>
 
         <div class="input-group-prepend">
             <div class="input-group-text">
-                <input type="radio" aria-label="Radio button for following text input" name="note" value="3"> 3
+                <input type="radio" aria-label="Radio button for following text input" name="note" value="3" class="mr-2"> 3
             </div>
         </div>
 
         <div class="input-group-prepend">
             <div class="input-group-text">
-                <input type="radio" aria-label="Radio button for following text input" name="note" value="4"> 4
+                <input type="radio" aria-label="Radio button for following text input" name="note" value="4" class="mr-2"> 4
             </div>
         </div>
 
         <div class="input-group-prepend">
             <div class="input-group-text">
-                <input type="radio" aria-label="Radio button for following text input" name="note" value="5"> 5
+                <input type="radio" aria-label="Radio button for following text input" name="note" value="5" class="mr-2"> 5
             </div>
         </div>
     </div>
